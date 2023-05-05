@@ -1,39 +1,8 @@
 <odoo>
     <data>
-        <record id="view_custom_crm_visit_form" model="ir.ui.view">
-            <field name="name">view.custom.crm.visit.form</field>
-            <field name="model">custom_crm.visit</field>
-            <field name="arch" type="xml">
 
 
-            <!-- vista FORMULARIO-->
-                <form string="Visita">
-                    <sheet>
-                        <!-- <div class="oe_button_box" name="button_box">
-                            <button name="toggle_state" type="object" class="oe_stat_button"
-                                    string="Cambiar realizada" icon="fa-play-circle"
-                            />
-                        </div> -->
-                        <group name="group_top">
-                            <group name="group_left"> <!-- este ya estaba-->
-                            
-                                <field name="customer"/>
-                                <field name="date"/>
-                                <field name="type"/>
-                            </group>
-
-                            <group name="group_right"> <!-- este ya estaba-->
-                                <field name="name"/>
-                                <field name="done"/>
-                                <field name="image" widget="image"/>
-                            </group>
-                        </group>
-                    </sheet>
-                </form>
-            </field>
-        </record>
-
-<!-- vista TREE-->
+<!--VISTA ARBOL-->
         <record id="view_custom_crm_visit_tree" model="ir.ui.view">
             <field name="name">view.custom.crm.visit.tree</field>
             <field name="model">custom_crm.visit</field>
@@ -50,7 +19,40 @@
             </field>
         </record>
 
-<!-- <record id="view_custom_crm_visit_kanban" model="ir.ui.view">
+    <!--VISTA FORMULARIO -->
+        <record id="view_custom_crm_visit_form" model="ir.ui.view">
+            <field name="name">view.custom.crm.visit.form</field>
+            <field name="model">custom_crm.visit</field>
+            <field name="arch" type="xml">
+                <form string="Visita">
+                    <sheet>
+                        <div class="oe_button_box" name="button_box">
+                            <button name="toggle_state" type="object" class="oe_stat_button"
+                                    string="Cambiar realizada" icon="fa-play-circle"
+                            />
+                        </div>
+                        <group name="group_top">
+                            <group name="group_left">
+                                <field name="customer"/>
+                                <field name="date"/>
+                                <field name="type"/>
+                            </group>
+                            <group name="group_right">
+                                <field name="name"/>
+                                <field name="done"/>
+                                <field name="image" widget="image"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+ 
+
+        <!-- VISTA KANBAN -->
+
+        <record id="view_custom_crm_visit_kanban" model="ir.ui.view">
             <field name="name">view.custom.crm.visit.kanban</field>
             <field name="model">custom_crm.visit</field>
             <field name="arch" type="xml">
@@ -84,9 +86,12 @@
                     </templates>
                 </kanban>
             </field>
-        </record> -->
+        </record>
 
-        <!-- <record id="view_custom_crm_visit_search" model="ir.ui.view">
+
+        <!-- VISTA SEARCH -->
+
+        <record id="view_custom_crm_visit_search" model="ir.ui.view">
             <field name="name">view.custom.crm.visit.search</field>
             <field name="model">custom_crm.visit</field>
             <field name="arch" type="xml">
@@ -105,16 +110,23 @@
                             help="Visitas realizadas"/>
                 </search>
             </field>
-        </record> -->
-
+        </record>
 
         <record id="action_custom_crm_visit_view" model="ir.actions.act_window">
             <field name="name">Visita</field>
+            <field name="type">ir.actions.act_window</field>
             <field name="res_model">custom_crm.visit</field>
-            <field name="view_mode">tree,form</field>
-            <field name="view_id" ref="view_custom_crm_visit_tree" />
+            <field name="view_mode">tree,form,kanban</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Visitas
+                </p>
+                <p>
+                    Click 'Nuevo' para añadir nuevos elementos
+                </p>
+            </field>
         </record>
-    
+
 
         <!-- <record id="view_sale_order_form" model="ir.ui.view">
             <field name="name">view.sale.order.form</field>
@@ -127,15 +139,15 @@
             </field>
         </record> -->
 
-                    <!--MENU INGRESOS-->
-        <menuitem name="Custom CRM" id="menu_custom_crm_root" 
-                    action="action_custom_crm_visit_view"
-                    sequence="1"/>
+            <!--  MENU DE LA CLASE VISIT -->
+        <menuitem id="menu_custom_crm_root" name="Custom CRM" sequence="10" web_icon="custom_crm,static/description/icon.png" /> 
 
-        <menuitem id="menu_custom_crm_visit_categ" name="Operaciones" parent="menu_custom_crm_root" sequence="1"/>
-<!-- 
+        <menuitem id="menu_custom_crm_visit_categ" name="Operaciones" parent="menu_custom_crm_root" sequence="0"/>
+
         <menuitem id="menu_custom_crm_visit" name="Visitas" parent="menu_custom_crm_visit_categ" sequence="0"
-                action="action_custom_crm_visit_view"/> -->
+                action="action_custom_crm_visit_view"/>
+
+
 
     </data>
 </odoo>

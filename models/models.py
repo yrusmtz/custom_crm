@@ -16,9 +16,8 @@ class Visit(models.Model):
     image = fields.Binary(string='Imagen')
 
 
-
-    # def toggle_state(self):
-    #     self.done = not self.done
+    def toggle_state(self):
+        self.done = not self.done
 
     # #ORM
     # def f_create(self):

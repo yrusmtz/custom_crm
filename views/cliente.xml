@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_custom_crm_cliente_form" model="ir.ui.view">
+            <field name="name">view.custom.crm.cliente.form</field>
+            <field name="model">custom_crm.cliente</field>
+            <field name="arch" type="xml">
+                <!-- vista FORMULARIO-->
+                <form string="cliente">
+                    <sheet>
+                        <div class="oe_button_box" name="button_box">
+                            <button name="toggle_state" type="object" class="oe_stat_button"
+                                    string="Cambiar realizada" icon="fa-play-circle"
+                            />
+                        </div> 
+                        <group name="group_top">
+                            <group name="group_left"> <!-- este ya estaba-->
+
+                                <field name="customer" />
+                                <field name="date" />
+                                <field name="type" />
+                            </group>
+
+                            <group name="group_right"> <!-- este ya estaba-->
+                                <field name="name" />
+                                <field name="done" />
+                                <field name="image" widget="image" />
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- vista TREE-->
+        <record
+            id="view_custom_crm_cliente_tree" model="ir.ui.view">
+            <field name="name">view.custom.crm.cliente.tree</field>
+            <field name="model">custom_crm.cliente</field>
+            <field name="arch" type="xml">
+                <tree string="cliente">
+                    <field name="customer" />
+                    <field name="name" />
+                    <field name="type" />
+                    <field name="date" />
+                    <!-- <button name="f_create" string="Crear" class="oe_highlight" type="object"/>
+                    <button name="f_search_update" string="Buscar/Editar" class="oe_highlight" type="object"/>
+                    <button name="f_delete" string="Eliminar" class="oe_highlight" type="object"/> -->
+                </tree>
+            </field>
+        </record>
+
+
+        <!-- ACCION- CLIENTE -->
+        <record id="action_custom_crm_cliente_view" model="ir.actions.act_window">
+            <field name="name">cliente</field>
+            <field name="res_model">custom_crm.cliente</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="view_custom_crm_cliente_tree" />
+        </record>
+        
+        
+     <menuitem
+        id="menu_custom_crm_clientes"
+        name="clientes"
+        parent="menu_custom_crm_root"
+        sequence="5">
+             <menuitem
+                id="menu_custom_crm_cliente"
+                name="clientes"
+                action="action_custom_crm_cliente_view"
+                sequence="5"/>
+        </menuitem> 
+
+    </data>
+
+</odoo>

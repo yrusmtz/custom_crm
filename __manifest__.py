@@ -9,7 +9,7 @@
         Módulo CRM para la gestión de visitas...
     """,
 
-    'author': "curso odoo",
+    'author': "sury",
     'website': "http://www.odoo.com",
 
     # Categories can be used to filter modules in modules listing
@@ -28,8 +28,11 @@
         
         #VISTAS
         'views/views.xml',
-        
+        #'views/custom_crm_menu_items.xml',
+        'views/cliente.xml',
+        'views/auto.xml',
+        'views/taller.xml',
     ],
     # only loaded in demonstration mode
-   
+
 }
