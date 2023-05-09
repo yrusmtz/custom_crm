@@ -4,3 +4,4 @@ from . import models
 from . import cliente
 from . import auto
 from . import taller
+#from . import CustomSaleOrder

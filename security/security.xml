@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+    <data>
+
+
+        <record id="module_custom_crm" model="ir.module.category">
+            <field name="name">custom_crm</field>
+            <field name="sequence">15</field>
+
+
+        </record>
+
+
+        <record id="rol_usuario_comun" model="res.groups">
+            <field name="name">Usuario Final</field>
+            <field name="category_id" ref="module_custom_crm" />
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+
+
+        <record id="rol_usuario_administrador" model="res.groups">
+            <field name="name">Supervisor : admin</field>
+            <field name="category_id" ref="module_custom_crm" />
+            <field name="implied_ids" eval="[(4, ref('rol_usuario_comun'))]"/> 
+            <field name="users" eval="[(4, ref('base.user_root')), (4,
+            ref('base.user_admin'))]"/> 
+        </record> 
+
+
+    </data>
+</odoo>

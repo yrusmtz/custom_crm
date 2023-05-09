@@ -1,14 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <data>
-        <record id="view_custom_crm_auto_form" model="ir.ui.view">
-            <field name="name">view.custom.crm.auto.form</field>
-            <field name="model">custom_crm.auto</field>
-            <field name="arch" type="xml">
-
             <!-- vista TREE-->
         <record
-            id="view_custom_crm_auto_tree" model="ir.ui.view">
+                id="view_custom_crm_auto_tree" model="ir.ui.view">
             <field name="name">view.custom.crm.auto.tree</field>
             <field name="model">custom_crm.auto</field>
             <field name="arch" type="xml">
@@ -24,6 +19,11 @@
             </field>
         </record>
                 <!-- vista FORMULARIO-->
+
+            <record id="view_custom_crm_auto_form" model="ir.ui.view">
+            <field name="name">view.custom.crm.auto.form</field>
+            <field name="model">custom_crm.auto</field>
+            <field name="arch" type="xml">
                 <form string="auto">
                     <sheet>
                         <div class="oe_button_box" name="button_box">
@@ -53,7 +53,7 @@
 
 
             <!-- botones de accion -->
-        <record id="action_custom_crm_auto" model="ir.actions.act_window">
+        <record id="action_custom_crm_auto_view" model="ir.actions.act_window">
             <field name="name">auto</field>
             <field name="res_model">custom_crm.auto</field>
             <field name="view_mode">tree,form</field>
@@ -65,7 +65,7 @@
             id="menu_custom_crm_autos"
             name="autos"
             parent="menu_custom_crm_root"
-            sequence="7"> 
+            sequence="4"> 
         </menuitem> 
         
         <!--submenu 
@@ -73,11 +73,10 @@
         a id= "menu_custom_crm_auto_view" por que sino lo llamo dos veces-->
         <menuitem
         
-            id="menu_custom_crm_auto_view"    
+            id="menu_custom_crm_auto"    
             name="autos"
-            action="action_custom_crm_auto"
-            parent="menu_custom_crm_autos"
-            sequence="1"/>
+            action="action_custom_crm_auto_view"
+            sequence="4"/>
         
 
     </data>

@@ -14,7 +14,7 @@
                     <field name="date"/>
                     <!-- <button name="f_create" string="Crear" class="oe_highlight" type="object"/>
                     <button name="f_search_update" string="Buscar/Editar" class="oe_highlight" type="object"/>
-                    <button name="f_delete" string="Eliminar" class="oe_highlight" type="object"/> -->
+                    <button name="f_delete" string="Eliminar" class="oe_highlight" type="object"/>  -->
                 </tree>
             </field>
         </record>
@@ -137,10 +137,11 @@
                     <field name="zone" />
                 </xpath>
             </field>
-        </record> -->
+        </record>  -->
 
             <!--  MENU DE LA CLASE VISIT -->
-        <menuitem id="menu_custom_crm_root" name="Custom CRM" sequence="10" web_icon="custom_crm,static/description/icon.png" /> 
+        <menuitem id="menu_custom_crm_root" name="Custom CRM" sequence="10" web_icon="custom_crm,static/description/icon.png" 
+        groups="rol_usuario_administrador"/>
 
         <menuitem id="menu_custom_crm_visit_categ" name="Operaciones" parent="menu_custom_crm_root" sequence="0"/>
 

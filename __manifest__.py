@@ -24,15 +24,25 @@
     # always loaded
     'data': [
         #SEGURIDAD
+        'security/security.xml',
         'security/ir.model.access.csv',
         
         #VISTAS
         'views/views.xml',
-        #'views/custom_crm_menu_items.xml',
         'views/cliente.xml',
         'views/auto.xml',
         'views/taller.xml',
+        'views/templates.xml',
+    
+
+        #REPORTES
+        'reports/visit.xml',
+        #'report/custom_crm_report_templates.xml',
     ],
     # only loaded in demonstration mode
 
+
+    'demo': [
+        'demo/demo.xml',
+        ]
 }

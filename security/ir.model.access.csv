@@ -2,7 +2,12 @@ id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 
 access_custom_crm_visit,custom_crm_visit,model_custom_crm_visit,base.group_user,1,1,1,1
 access_custom_crm_cliente,custom_crm_cliente,model_custom_crm_cliente,base.group_user,1,1,1,1
-access_custom_crm_auto_views,custom_crm_auto,model_custom_crm_auto,base.group_user,1,1,1,1
+access_custom_crm_auto,custom_crm_auto,model_custom_crm_auto,base.group_user,1,1,1,1
 access_custom_crm_taller_views,custom_crm_taller,model_custom_crm_taller,base.group_user,1,1,1,1
 
 
+access_custom_crm_visit1,custom_crm_visit,model_custom_crm_visit,rol_usuario_comun,1,1,1,0
+access_custom_crm_visit2,custom_crm_visit,model_custom_crm_visit,rol_usuario_administrador,1,1,1,0
+
+access_custom_crm_cliente1,custom_crm_cliente,model_custom_crm_cliente,rol_usuario_comun,1,1,1,0
+access_custom_crm_cliente2,custom_crm_cliente,model_custom_crm_cliente,rol_usuario_administrador,1,1,1,0
