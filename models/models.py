@@ -3,6 +3,14 @@
 from odoo import models, fields, api
 import datetime
 
+import io
+import json
+import base64
+import xlsxwriter
+
+import logging
+
+_logger = logging.getLogger(__name__)
 
 class Visit(models.Model):
     _name = 'custom_crm.visit'
@@ -18,6 +26,10 @@ class Visit(models.Model):
 
     def toggle_state(self):
         self.done = not self.done
+
+    
+    
+
 
 
 
@@ -35,3 +47,5 @@ class Visit(models.Model):
                 'doc_model': self.env['custom_crm.visit'],
                 'docs': self.env['custom_crm.visit'].browse(docids)
             }
+
+       

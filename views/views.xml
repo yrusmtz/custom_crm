@@ -42,7 +42,11 @@
                                 <field name="done"/>
                                 <field name="image" widget="image"/>
                             </group>
-                        </group>
+
+                            <!-- <button name="export_excel" type="object" class="oe_stat_button"
+                                    string="Cambiar realizada" icon="fa-play-circle"
+                            /> -->
+                            </group>
                     </sheet>
                 </form>
             </field>
@@ -140,13 +144,23 @@
         </record>  -->
 
             <!--  MENU DE LA CLASE VISIT -->
-        <menuitem id="menu_custom_crm_root" name="Custom CRM" sequence="10" web_icon="custom_crm,static/description/icon.png" 
+        <menuitem 
+        id="menu_custom_crm_root" 
+        name="Custom CRM" 
+        sequence="10" 
+        web_icon="custom_crm,static/description/icon.png" 
         groups="rol_usuario_administrador"/>
 
-        <menuitem id="menu_custom_crm_visit_categ" name="Operaciones" parent="menu_custom_crm_root" sequence="0"/>
+        <menuitem id="menu_custom_crm_visit_categ"
+        name="Operaciones" 
+        parent="menu_custom_crm_root" sequence="0"/>
 
-        <menuitem id="menu_custom_crm_visit" name="Visitas" parent="menu_custom_crm_visit_categ" sequence="0"
-                action="action_custom_crm_visit_view"/>
+        <menuitem id="menu_custom_crm_visit" 
+        name="Visitas"
+        parent="menu_custom_crm_visit_categ"
+        sequence="0"
+            action="action_custom_crm_visit_view"/>
+
 
 
 
